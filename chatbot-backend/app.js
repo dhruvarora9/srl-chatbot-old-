@@ -3,10 +3,10 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const db = require("./config/db");
 
-const userRouter = require("./routes/user");
+const answeredqueryRouter = require("./routes/answeredquery");
 
 const app = express();
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3030;
 
 app.use(bodyParser.urlencoded({ limit: "50mb", extended: true }));
 app.use(bodyParser.json());
@@ -35,7 +35,11 @@ app.use(function (req, res, next) {
   next();
 });
 
-app.use("/api/user", userRouter);
+app.use("/api/ansquery", answeredqueryRouter);
+
+app.get("/", (req, res) => {
+  res.json({ message: "server started successfully" });
+});
 
 db()
   .then(() => {

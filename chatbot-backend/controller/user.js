@@ -1,4 +1,4 @@
-const UserModel = require("../model/user");
+const UserModel = require("../model/answeredquery");
 // const { add_user_schema } = require("../schema/user")
 // const createError = require('http-errors')
 
@@ -6,7 +6,7 @@ module.exports = {
   addUserQuery: async (req, res, next) => {
     try {
       const { query, response } = req.body;
-      
+
       const user = new UserModel({
         query: query,
         response: response,
@@ -97,21 +97,19 @@ module.exports = {
 
       await UserModel.findOne({ query: userQuery })
         .then(async (data) => {
-          if(data){
+          if (data) {
             return res.status(200).json({
               message: "User Query fetched Successfully",
               user: data,
               status: 1,
             });
-          }else{
+          } else {
             return res.status(200).json({
               message: "this query doesn't exists",
-              user: {"query": "Hi",
-              "response": "sorry unable to process",},
+              user: { query: "Hi", response: "sorry unable to process" },
               status: 1,
             });
           }
-         
         })
         .catch((err) => {
           const error = new Error(err);
