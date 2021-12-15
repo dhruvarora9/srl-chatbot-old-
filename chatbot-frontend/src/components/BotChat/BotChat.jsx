@@ -1,11 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import { useSelector } from "react-redux";
 import BotChatInput from "../BotChatInput/BotChatInput";
 import MessageBubble from "../MessageBubble/MessageBubble";
 import "./BotChat.css";
 
 export default function BotChat() {
-  const [message, setMessage] = useState("");
   const messages = useSelector((store) => store.botmessage.messages);
   return (
     <div className="botchat-rootContainer">

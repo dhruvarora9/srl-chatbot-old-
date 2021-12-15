@@ -10,7 +10,6 @@ export default function MessageBubble({ id, content, type }) {
           ? "messagebubble-rootContainer messagebubble-left"
           : "messagebubble-rootContainer messagebubble-right"
       }
-      style={{}}
     >
       <span className="messagebubble-content">{content}</span>
     </div>

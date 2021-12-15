@@ -20,6 +20,9 @@ export default function BotChatInput() {
           type="text"
           value={message}
           placeholder="write your text here"
+          onKeyDown={(e) => {
+            if (e.key === "Enter") sendBotMessageHandler();
+          }}
           onChange={(e) => setmessage(e.target.value)}
         />
         <button

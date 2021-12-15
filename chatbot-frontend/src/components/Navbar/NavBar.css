@@ -1,6 +1,7 @@
 .navbar-rootContainer {
   background-color: #6da9c0;
   width: 100%;
+  flex-basis: 20%;
   padding: 0.1em 0.2em;
 }
 .navbar-headerContainer {

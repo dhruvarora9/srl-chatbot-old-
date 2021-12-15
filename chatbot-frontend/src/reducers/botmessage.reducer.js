@@ -41,7 +41,8 @@ const botmessage = (state = initialState, action) => {
     case SEND_BOT_MESSAGE_FAILED:
       return {
         ...state,
-        error: action.payload,
+        error: action.error,
+        messages: action.payload,
         loading: false,
       };
     default:

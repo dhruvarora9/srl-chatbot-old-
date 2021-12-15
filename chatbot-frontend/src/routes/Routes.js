@@ -1,10 +1,10 @@
 import { Route, Routes } from "react-router";
-import BotChat from "../components/BotChat/BotChat";
+import Home from "../components/Home/Home";
 
 const RouteMain = () => {
   return (
     <Routes>
-      <Route path="/" element={<BotChat />} />
+      <Route path="/" element={<Home />} />
     </Routes>
   );
 };

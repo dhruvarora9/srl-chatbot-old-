@@ -29,8 +29,7 @@ module.exports = {
       }
       res.json({
         status: 1,
-        query,
-        response: answeredQueryResponse,
+        responseData: answeredQueryResponse.response,
       });
     } catch (error) {
       res.status(500).json({
