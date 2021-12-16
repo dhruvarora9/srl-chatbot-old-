@@ -38,7 +38,7 @@ module.exports = {
           return res.status(200).json({
             message: "Login Successful",
             admin: data,
-            // token: 'user logedin',
+            token: 'adminLogedIn',
             status: 1,
           });
         } else {
@@ -59,30 +59,3 @@ module.exports = {
 },
 
 };
-
-// exports.adminLogin = async (req, res, next) => {
-//     try {
-//         if (Object.keys(req.admin).length > 0) {
-//             const payload = {
-//                 email: req.admin.email,
-//                 password: req.admin.password
-//             }
-//             return res.status(200).json({
-//                 message: "Login Successful",
-//                 // token: generate_user_jwt(payload),
-//                 // tokenType: 'Bearer',
-//                 status: 1
-//             });
-//         } else {
-//             return res.status(400).json({
-//                 message: "Invalid Email and Password",
-//                 status: 0
-//             });
-//         }
-//     } catch (err) {
-//         const error = new Error(err);
-//         next(error);
-//     }
-// };
-
-

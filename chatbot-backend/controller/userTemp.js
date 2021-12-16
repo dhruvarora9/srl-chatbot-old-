@@ -1,6 +1,4 @@
 const UserModel = require("../model/answeredquery");
-// const { add_user_schema } = require("../schema/user")
-// const createError = require('http-errors')
 
 module.exports = {
   addUserQuery: async (req, res, next) => {
