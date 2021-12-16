@@ -14,11 +14,10 @@ exports.validateBody = (schema) => {
                 });
             } else {
                 if (!req.body) {
-                    console.log('hello',req.body)
                     req.body = {};
                 }
-                console.log('hi',req['body'])
-                console.log('hey',validation)
+                // console.log('hi',req['body'])
+                // console.log('hey',validation)
                 
                 req['body'] = validation.value;
                 next();
