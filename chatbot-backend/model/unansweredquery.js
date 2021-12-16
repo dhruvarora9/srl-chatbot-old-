@@ -9,7 +9,6 @@ const unansweredQuery = new mongoose.Schema({
     type: String,
   },
 });
-//id
-//list
+
 
 module.exports = mongoose.model("unansweredquery", unansweredQuery);

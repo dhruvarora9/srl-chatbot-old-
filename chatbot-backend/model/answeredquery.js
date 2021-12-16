@@ -10,7 +10,6 @@ const answeredQuery = new mongoose.Schema({
     required: true,
   },
 });
-//id
-//list
+
 
 module.exports = mongoose.model("answeredquery", answeredQuery);

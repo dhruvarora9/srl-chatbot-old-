@@ -101,6 +101,7 @@ module.exports = {
             return res.status(200).json({
               message: "User Query fetched Successfully",
               user: data,
+              // token: 'user logedin',
               status: 1,
             });
           } else {

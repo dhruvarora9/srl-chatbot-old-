@@ -4,6 +4,7 @@ const bodyParser = require("body-parser");
 const db = require("./config/db");
 
 const answeredqueryRouter = require("./routes/answeredquery");
+const adminRouter = require("./routes/adminuser");
 
 const app = express();
 const port = process.env.PORT || 3030;
@@ -36,6 +37,8 @@ app.use(function (req, res, next) {
 });
 
 app.use("/api/ansquery", answeredqueryRouter);
+app.use("/api/admin", adminRouter);
+
 
 app.get("/", (req, res) => {
   res.json({ message: "server started successfully" });
