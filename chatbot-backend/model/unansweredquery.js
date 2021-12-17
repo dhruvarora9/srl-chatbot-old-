@@ -7,6 +7,7 @@ const unansweredQuery = new mongoose.Schema({
   },
   response: {
     type: String,
+    required : false,
   },
 });
 
