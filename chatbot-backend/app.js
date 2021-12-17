@@ -5,6 +5,7 @@ const db = require("./config/db");
 
 const answeredqueryRouter = require("./routes/answeredquery");
 const adminRouter = require("./routes/adminuser");
+const unansweredqueryRouter = require('./routes/unansweredquery');
 
 const app = express();
 const port = process.env.PORT || 3030;
@@ -38,6 +39,7 @@ app.use(function (req, res, next) {
 
 app.use("/api/ansquery", answeredqueryRouter);
 app.use("/api/admin", adminRouter);
+app.use("/api/unansquery", unansweredqueryRouter);
 
 
 app.get("/", (req, res) => {
