@@ -17,15 +17,14 @@ export const adminLogin = (email, password, navigate) => (dispatch) => {
     password: password,
   })
     .then((res) => {
-      let uniqueToken = uniqueId();
       localStorage.setItem("email", res.data.admin.email);
       localStorage.setItem("username", res.data.admin.username);
-      localStorage.setItem("token", uniqueToken);
+      localStorage.setItem("token", res.data.token);
       dispatch({
         type: LOGIN_ADMIN_SUCCESS,
         email: res.data.admin.email,
         username: res.data.admin.username,
-        token: uniqueToken,
+        token: res.data.token,
       });
       navigate("/dashboard", { replace: true });
     })

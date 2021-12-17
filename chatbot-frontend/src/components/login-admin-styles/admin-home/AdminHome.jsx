@@ -1,37 +1,26 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Table } from "react-bootstrap";
+import { Button, Table } from "react-bootstrap";
 import { toast } from "react-toastify";
 import Pagination from "react-js-pagination";
-
 import "../admin-home/adminhome.styles.css";
 import { Link } from "react-router-dom";
 import AdminNavbar from "./AdminNavbar";
+import AdminResponse from "./AdminResponse";
 
 const AdminHome = (props) => {
   const { editModal, setEditModal } = props;
   console.log("editModal home", editModal);
   const dispatch = useDispatch();
-  const unansweredData = [
-    {
-      id: 1,
-      text: "Hello",
-    },
-    {
-      id: 2,
-      text: "Hello",
-    },
-    {
-      id: 3,
-      text: "Hello",
-    },
-  ];
-  console.log("unansweredData in adminhome", unansweredData);
+  const unansweredQuesList = useSelector((store) => store.quesData.quesList);
 
   const [itemsCountPerPage, setItemsCountPerPage] = useState(5);
   const [activePage, setActivePage] = useState(1);
   const [pageRangeDisplayed, setPageRangeDisplayed] = useState(5);
   const [totalData, setTotalData] = useState(0);
+  const [showResponseModal, setShowResponseModal] = useState(false);
+  const [responseModalData, setResponseModalData] = useState("");
+
   const lastData = activePage * itemsCountPerPage;
   const firstData = lastData - itemsCountPerPage;
 
@@ -39,8 +28,13 @@ const AdminHome = (props) => {
     toast.success("question has been deleted");
   };
 
+  const showResponseModalHandler = (id) => {
+    setResponseModalData(id);
+    setShowResponseModal(true);
+  };
+
   useEffect(() => {
-    setTotalData(unansweredData.length);
+    setTotalData(unansweredQuesList.length);
     console.log("activepage", activePage);
   }, [activePage]);
 
@@ -57,36 +51,48 @@ const AdminHome = (props) => {
             </tr>
           </thead>
           <tbody>
-            {unansweredData &&
-              unansweredData.length > 0 &&
-              unansweredData.slice(firstData, lastData).map((data, index) => {
-                return (
-                  <tr key={index}>
-                    <td>{data.id}</td>
-                    <td>{data.text}</td>
-                    <td>
-                      <button
-                        class="btn btn-outline-secondary"
-                        onClick={() => setEditModal(true)}
+            {unansweredQuesList &&
+              unansweredQuesList.length > 0 &&
+              unansweredQuesList
+                .slice(firstData, lastData)
+                .map((data, index) => {
+                  return (
+                    <tr key={index}>
+                      <td>{data.id}</td>
+                      <td>{data.text}</td>
+                      <td>
+                        {/* <Link
+                        className="btn btn-primary "
+                        role="button"
+                        to={`/adminResponse/${data.id}`}
                       >
-                        <Link to={`/adminResponse/${data.id}`}> response </Link>{" "}
-                      </button>
-                    </td>
-                    <td>
-                      <button
-                        class="btn btn-outline-secondary"
-                        onClick={handleDelete}
-                      >
-                        {" "}
-                        delete{" "}
-                      </button>
-                    </td>
-                  </tr>
-                );
-              })}
+                        Add Response
+                      </Link> */}
+                        <Button
+                          variant="outline-primary"
+                          onClick={() => showResponseModalHandler(data.id)}
+                        >
+                          Add Response
+                        </Button>
+                      </td>
+                      <td>
+                        <Button variant="outline-danger" onClick={handleDelete}>
+                          Delete Question
+                        </Button>
+                      </td>
+                    </tr>
+                  );
+                })}
           </tbody>
         </Table>
       </div>
+      {showResponseModal && (
+        <AdminResponse
+          show={showResponseModal}
+          onHide={setShowResponseModal}
+          id={responseModalData}
+        />
+      )}
       {console.log("editModal after click", editModal)}
       {totalData > itemsCountPerPage ? (
         <Pagination
@@ -101,7 +107,6 @@ const AdminHome = (props) => {
       )}
     </div>
   );
-  return <div></div>;
 };
 export default AdminHome;
 

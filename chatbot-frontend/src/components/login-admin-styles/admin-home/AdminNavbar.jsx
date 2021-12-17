@@ -1,5 +1,6 @@
 import React from "react";
 import { useDispatch } from "react-redux";
+import { Link } from "react-router-dom";
 import { logoutAdmin } from "../../../actions/authAction";
 
 import "../admin-home/adminhome.styles.css";
@@ -17,7 +18,10 @@ const AdminNavbar = () => {
             Admin-Chatbot
           </a>
 
-          <form class="d-flex">
+          <form class="d-flex gap-2">
+            <Link role="button" className="btn btn-secondary" to="/">
+              Home
+            </Link>
             <button
               class="btn btn-secondary"
               type="submit"

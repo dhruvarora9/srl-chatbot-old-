@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Button } from "react-bootstrap";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { Get_Bot_Message } from "../../actions/botchatAction";
@@ -25,12 +26,12 @@ export default function BotChatInput() {
           }}
           onChange={(e) => setmessage(e.target.value)}
         />
-        <button
+        <Button
           className="botchatinput-sendButton"
           onClick={sendBotMessageHandler}
         >
           Send
-        </button>
+        </Button>
       </div>
     </div>
   );

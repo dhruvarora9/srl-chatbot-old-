@@ -51,7 +51,7 @@ const Login = () => {
     <div className="container">
       <div className="requestCallWrapper">
         <Row>
-          <Col xs={12} md={12} className="callBackBg">
+          <Col xs={12} md={12} className="callBackBg ">
             <h3>Log in to Your Account</h3>
             <Formik
               initialValues={initialValues}
@@ -68,7 +68,7 @@ const Login = () => {
               }) => {
                 return (
                   <FormikForm>
-                    <Form.Group controlId="email">
+                    <Form.Group controlId="email" className="my-4">
                       <Form.Control
                         type="text"
                         name="email"
@@ -82,7 +82,7 @@ const Login = () => {
                         <p className="error no-pos"> {errors.email}</p>
                       ) : null}
                     </Form.Group>
-                    <Form.Group controlId="password">
+                    <Form.Group controlId="password" className="my-4">
                       <Form.Control
                         type="password"
                         placeholder="Password *"
@@ -103,7 +103,7 @@ const Login = () => {
                     ) : null}
                     <Button
                       variant="primary"
-                      className="btn btnRed"
+                      className="btn d-grid col-6 mx-auto"
                       type="submit"
                     >
                       LogIn

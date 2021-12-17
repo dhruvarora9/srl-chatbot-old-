@@ -1,65 +1,65 @@
 .requestCallWrapper {
-	max-width: 721px;
-	margin: 0 auto;
-	border-radius: 15px;
-	box-shadow: 0px 0px 5px 1px rgb(0 0 0 / 11%);
-	background-color: #fff;
-	position: relative;
-	padding: 20px 50px;
-	font-size: 16px;
-	line-height: 21px;
-	min-height: 320px;
-	background-repeat: no-repeat;
-	background-position: bottom left 20px;
+  max-width: 721px;
+  margin: 0 auto;
+  border-radius: 15px;
+  box-shadow: 0px 0px 5px 1px rgb(0 0 0 / 11%);
+  background-color: #fff;
+  position: relative;
+  padding: 20px 50px;
+  font-size: 16px;
+  line-height: 21px;
+  min-height: 320px;
+  background-repeat: no-repeat;
+  background-position: bottom left 20px;
 }
 
 .requestCallWrapper h3 {
-	font-size: 26px;
-	line-height: 28px;
-	margin-bottom: 15px;
+  font-size: 26px;
+  line-height: 28px;
+  margin-bottom: 15px;
 }
 
 .requestCallWrapper .form-control {
-	border: none;
-	border-bottom: 1px solid #b4b4b4;
-	border-radius: 0px;
-	padding-left: 0px;
-	margin-top: 15px;
-	margin: 2px;
-	font-size: 14px;
+  border: none;
+  border-bottom: 1px solid #b4b4b4;
+  border-radius: 0px;
+  padding-left: 0px;
+  margin-top: 15px;
+  margin: 2px;
+  font-size: 14px;
 }
 
 .requestCallWrapper .form-control:focus {
-	border-bottom: 1px solid #b4b4b4;
+  border-bottom: 1px solid #b4b4b4;
 }
 
 .requestCallWrapper a {
-	color: #000;
-	text-decoration: none;
+  color: #000;
+  text-decoration: none;
 }
 
 .requestCallWrapper h2 {
-	font-size: 24px;
-	line-height: 46px;
+  font-size: 24px;
+  line-height: 46px;
 }
 
 .requestCallWrapper h3 {
-	font-size: 22px;
-	line-height: 24px;
-	margin-top: 18px;
-	margin-bottom: 15px;
+  font-size: 22px;
+  line-height: 24px;
+  margin-top: 18px;
+  margin-bottom: 15px;
 }
 
 .requestCallWrapper {
-	padding: 20px;
+  padding: 20px;
 }
 
 .requestCallWrapper div {
-	z-index: 99;
+  z-index: 99;
 }
 
-.requestCallWrapper  button {
-	margin-left: 300px;
+.requestCallWrapper button {
+  margin-left: 300px;
 }
 /* .requestCallWrapper::after {
 	content: '';
@@ -75,5 +75,5 @@
 } */
 
 .requestCallModal .modal-dialog {
-	max-width: 721px !important;
+  max-width: 721px !important;
 }
